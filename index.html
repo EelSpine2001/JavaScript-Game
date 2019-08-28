@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Game</title>
+</head>
+
+<body>
+    <h1 id="displaytText"> Enter any key to start</h1>
+    <p>Wins: <span id="wins"></span></p>
+    <p>Losses: <span id="losses"></span></p>
+    <p>Guesses Left: <span id="guessleft"></span></p>
+    <p>Guesses Made: <span id="guessmade"></span></p>
+
+    <script>
+        var wins = 0;
+        var losses = 0;
+        var guessleft = 9;
+        var guessSoFar = [];
+        var userGuess;
+        var computerGuess = 0;
+        var computerChoices["a"];
+        var displayText = "";
+
+        function updateDisplay() {
+            document.querySelector("#displaytext").innerHTML = displayText;
+            document.querySelector("#wins").innerHTML = wins;
+            document.querySelector("#losses").innerHTML = losses;
+            document.querySelector("#guessleft").innerHTML = guessleft;
+            document.querySelector("#guessSoFar").innerHTML = guessSoFar;
+        };
+        updateDisplay()
+
+        function computerRandomLetter() {
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        };
+
+        function resetScores() {
+            guessleft = 9;
+            guessSoFar = [];
+        };
+        computerRandomLetter(ComputerGuess)
+
+        document.onkeyup = function() {
+            var userGuess = event.key;
+
+
+            updateDisplay()
+        }
+    </script>
+</body>
+
+</html>
